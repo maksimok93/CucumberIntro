@@ -1,4 +1,5 @@
 require 'watir'
+require_relative '../../properties/credentials'
 
 Before do
   @browser = Watir::Browser.new :chrome
