@@ -10,6 +10,6 @@ When(/^user logs in with valid username and password$/) do
   @browser.element(css: 'input[id="loginButton"]').click
 end
 
-Then(/^verify page has been loaded$/) do
+Then(/^user logged in successfully$/) do
   expect(@browser.text.include?('Logged in as Super User (admin) at Inpatient Ward.')).to be true
 end
