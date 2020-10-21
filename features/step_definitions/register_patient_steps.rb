@@ -1,10 +1,6 @@
 
 Given(/^go to Login page and log in$/) do
-  @browser.goto('https://demo.openmrs.org/openmrs/login.htm')
-  @browser.text_field(id: 'username').set CREDENTIALS[0]
-  @browser.text_field(id: 'password').set CREDENTIALS[1]
-  @browser.element(css: 'li[id="Inpatient Ward"]').click
-  @browser.element(css: 'input[id="loginButton"]').click
+  log_in_as_admin
 end
 
 And(/^Choose Register page$/) do
