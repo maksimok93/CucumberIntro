@@ -15,6 +15,9 @@ end
 
 And(/^Choose gender$/) do
   @browser.element(id: 'genderLabel').click
+end
+
+And(/^Choose male$/) do
   @browser.element(css: 'option[value="M"]').click
 end
 
@@ -39,4 +42,12 @@ end
 Then(/^page return register success message$/) do
   wait_visible_text('Created Patient Record: Mike Abrams')
   expect(@browser.text.include?('Created Patient Record: Mike Abrams')).to be true
+end
+
+Then(/^page return similar patient found message$/) do
+  begin
+    expect(wait_visible_text('1 similar patient(s) found')).to be true
+  rescue Watir::Wait::TimeoutError => e
+    log("#{e.class}: #{e.message}")
+  end
 end
