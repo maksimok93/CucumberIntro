@@ -1,6 +1,19 @@
 
 Feature: Patient Search functionality
-  Scenario: Find patient order by names
+
+  Background:
     Given user goes to Find Patient Record page
-    When user search for patient 'John'
-    Then page return records containing patients named 'John'
+
+  Scenario Outline: Find an existent patient
+    When user search for patient <input_name>
+    Then page return records containing patients named <displayed_name>
+
+    Examples:
+      | input_name | displayed_name |
+      |     'John' |         'John' |
+      |    'Smith' |        'Smith' |
+      |     'Mary' |         'Mary' |
+
+  Scenario: Find a nonexistent patient
+    When user search for patient 'Daniele'
+    Then page return records containing patients named 'Daniele'
