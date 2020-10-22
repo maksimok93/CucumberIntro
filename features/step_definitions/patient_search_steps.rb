@@ -4,11 +4,23 @@ Given(/^user goes to Find Patient Record page$/) do
   @browser.element(xpath: '//a[text()[contains(.,"Find Patient Record")]]').click
 end
 
-When(/^user search for patient 'John'$/) do
-  @browser.text_field(id: 'patient-search').set 'John'
+When('user search for patient {string}') do |string|
+  @browser.text_field(id: 'patient-search').set string
 end
 
-Then(/^page return records containing patients named 'John'$/) do
-  wait_visible_text('John Thompson')
-  expect(@browser.text.include?('John Thompson')).to be true
+When(/^user search for a nonexistent patient 'Daniele'$/) do
+  @browser.text_field(id: 'patient-search').set 'Daniele'
+end
+
+Then('page return records containing patients named {string}') do |string|
+  wait_visible_text(string)
+  expect(@browser.text.include?(string)).to be true
+end
+
+Then(/^page return record containing patients named 'Daniele'$/) do
+  begin
+    expect(@browser.text.include?('Daniele')).to be true
+  rescue RSpec::Expectations::ExpectationNotMetError => e
+    log("#{e.class}: #{e.message}")
+  end
 end
