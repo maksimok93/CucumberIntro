@@ -15,5 +15,5 @@ Feature: Patient Search functionality
       |     'Mary' |         'Mary' |
 
   Scenario: Find a nonexistent patient
-    When user search for patient 'Daniele'
-    Then page return records containing patients named 'Daniele'
+    When user search for a nonexistent patient 'Daniele'
+    Then page return record containing patients named 'Daniele'
