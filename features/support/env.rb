@@ -7,7 +7,8 @@ def wait_visible_text(text)
 end
 
 def log_in_as_admin
-  @browser.goto('https://demo.openmrs.org/openmrs/login.htm')
+  @browser.goto('https://qa-refapp.openmrs.org/openmrs/')
+  # @browser.goto('https://demo.openmrs.org/openmrs/login.htm')
   @browser.text_field(id: 'username').set CREDENTIALS[0]
   @browser.text_field(id: 'password').set CREDENTIALS[1]
   @browser.element(css: 'li[id="Inpatient Ward"]').click
