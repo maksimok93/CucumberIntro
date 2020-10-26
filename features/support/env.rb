@@ -1,5 +1,6 @@
 require 'watir'
 require_relative '../../properties/credentials'
+require_relative '../../properties/locators'
 
 def wait_visible_text(text)
   Watir::Wait.until(timeout: 10) { @browser.text.include? text.to_s }

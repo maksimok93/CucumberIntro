@@ -1,7 +1,7 @@
 
 Given(/^user goes to Find Patient Record page$/) do
   log_in_as_admin
-  @browser.element(xpath: '//a[text()[contains(.,"Find Patient Record")]]').click
+  @browser.element(xpath: InpatientWardLocators::FIND_PATIENT_RECORD).click
 end
 
 When('user search for patient {string}') do |string|

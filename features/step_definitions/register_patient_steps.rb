@@ -4,7 +4,7 @@ Given(/^go to Login page and log in$/) do
 end
 
 And(/^Choose Register page$/) do
-  @browser.element(xpath: '//a[text()[contains(.,"Register a patient")]]').click
+  @browser.element(xpath: InpatientWardLocators::REGISTER_PATIENT).click
 end
 
 And(/^Fill required fields in Name tab$/) do
@@ -18,7 +18,7 @@ And(/^Choose gender$/) do
 end
 
 And(/^Choose male$/) do
-  @browser.element(css: 'option[value="M"]').click
+  @browser.element(css: InpatientWardLocators::GENDER_MALE).click
 end
 
 And(/^Fill birthdate field$/) do
@@ -30,7 +30,7 @@ And(/^Fill birthdate field$/) do
 end
 
 And(/^Fill address field$/) do
-  @browser.element(xpath: '//span[text()[contains(.,"Address")]]').click
+  @browser.element(xpath: InpatientWardLocators::ADDRESS).click
   @browser.text_field(id: 'address1').set '5th avenue'
 end
 

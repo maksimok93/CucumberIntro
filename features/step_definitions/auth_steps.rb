@@ -6,8 +6,8 @@ end
 When(/^user enters valid username and password$/) do
   @browser.text_field(id: 'username').set CREDENTIALS[0]
   @browser.text_field(id: 'password').set CREDENTIALS[1]
-  @browser.element(css: 'li[id="Inpatient Ward"]').click
-  @browser.element(css: 'input[id="loginButton"]').click
+  @browser.element(css: MainPageLocators::INPATIENT_WARD).click
+  @browser.element(css: MainPageLocators::LOGIN).click
 end
 
 Then(/^user entered successfully$/) do
