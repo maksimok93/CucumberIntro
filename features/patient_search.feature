@@ -9,11 +9,11 @@ Feature: Patient Search functionality
     Then page return records containing patients named <displayed_name>
 
     Examples:
-      | input_name | displayed_name |
-      |     'John' |         'John' |
-      |    'Smith' |        'Smith' |
-      |     'Mary' |         'Mary' |
+      | input_name |  displayed_name |
+      |     'John' | 'John Campbell' |
+      |    'Smith' |    'Paul Smith' |
+      |     'Mary' |   'Mary Miller' |
 
-  Scenario: Find a nonexistent patient
-    When user search for a nonexistent patient 'Daniele'
+  Scenario: Check that there are no records about specified patient
+    When user search for a patient 'Daniele'
     Then page return record containing patients named 'Daniele'

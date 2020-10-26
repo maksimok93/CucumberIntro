@@ -8,7 +8,7 @@ When('user search for patient {string}') do |string|
   @browser.text_field(id: 'patient-search').set string
 end
 
-When(/^user search for a nonexistent patient 'Daniele'$/) do
+When(/^user search for a patient 'Daniele'$/) do
   @browser.text_field(id: 'patient-search').set 'Daniele'
 end
 
