@@ -6,7 +6,7 @@ def wait_visible_text(text)
   Watir::Wait.until(timeout: 10) { @browser.text.include? text.to_s }
 end
 
-def set_patients_id(num=1, id)
+def set_patients_id(id, num = 1)
   @browser.text_field(id: "patient#{num.to_i}-text").set id.to_s
 end
 
