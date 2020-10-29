@@ -18,9 +18,5 @@ Then('page return records containing patients named {string}') do |string|
 end
 
 Then(/^page return record containing patients named 'Daniele'$/) do
-  begin
-    expect(@browser.text.include?('Daniele')).to be true
-  rescue RSpec::Expectations::ExpectationNotMetError => e
-    log("#{e.class}: #{e.message}")
-  end
+  expect(@browser.text.include?('Daniele')).to be true
 end
