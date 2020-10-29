@@ -22,9 +22,7 @@ module SysAdminLocators
 end
 
 module DataManagementLocators
-  # DATA_MANAGEMENT = '//a[text()[contains(.,"Data Management")]]'
   DATA_MANAGEMENT = 'a[href="/openmrs/coreapps/datamanagement/dataManagement.page"]'
-  # MERGE_PATIENT = '//a[text()[contains(.,"Merge Patient Electronic Records")]]'
   MERGE_PATIENT = 'a[id="coreapps-mergePatientsHomepageLink-app"]'
   CONTINUE_DISABLED = 'input[class="confirm disabled"]'
   MERGE_RECORDS_PAGE = 'https://qa-refapp.openmrs.org/openmrs/coreapps/datamanagement/mergePatients.page?app=coreapps.mergePatients'
