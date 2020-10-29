@@ -1,4 +1,3 @@
-
 Given(/^go to Login page and log in$/) do
   log_in_as_admin
 end
@@ -47,7 +46,9 @@ end
 Then(/^page return similar patient found message$/) do
   begin
     expect(wait_visible_text('1 similar patient(s) found')).to be true
-  rescue Watir::Wait::TimeoutError => e
-    log("#{e.class}: #{e.message}")
+  rescue Watir::Wait::TimeoutError
+    log("#{$ERROR_INFO.class}: #{$ERROR_INFO.message}")
+  ensure
+    log('test finished')
   end
 end
