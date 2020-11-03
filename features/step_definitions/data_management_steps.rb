@@ -18,7 +18,7 @@ end
 
 And(/^user enters same ids for both patients$/) do
   set_patients_id('1002C4')
-  set_patients_id(2, '1002C4')
+  set_patients_id('1002C4', 2)
 end
 
 And(/^user enters incorrect ids for both patients$/) do
