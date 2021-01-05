@@ -6,15 +6,15 @@ end
 
 When('user search for patient {string}') do |string|
   @browser.text_field(id: 'patient-search').set string
+  sleep 3
 end
 
 When(/^user search for a patient 'Daniele'$/) do
   @browser.text_field(id: 'patient-search').set 'Daniele'
 end
 
-Then('page return records containing patients named {string}') do |string|
-  wait_visible_text(string)
-  expect(@browser.text.include?(string)).to be true
+Then(/^page return records containing (.*)$/) do |result|
+  expect(@browser.text.include?(result)).to be true
 end
 
 Then(/^page return record containing patients named 'Daniele'$/) do
